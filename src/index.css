@@ -1,152 +1,147 @@
 body {
+  font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
 }
 
 .App {
-  margin: 0% 5% 0% 5%;
   text-align: center;
-}
-
-.TwirlyPig {
-  transition: all 3s ease-in-out;
-  display: inline;
-}
-
-.TwirlyPig:hover {
-  transform: scale(1.5);
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .navWrapper {
-  margin-bottom: 2%;
-}
-
-.filterWrapper {
-  margin: 2% 0% 2% 0%;
+  background-color: #ff6f61;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 .headerText {
-  color: #F5A9BC;
-  font-size: 3em;
-  margin: 0% 2% 0% 2%;
-}
-
-.largeHeader {
-  font-size: 3.5em;
+  font-size: 2.5rem;
   font-weight: bold;
-  color: #3B0B0B;
+  letter-spacing: 1px;
 }
 
-.smallHeader {
-  font-size: 1.75em;
-  font-weight: bold;
-  color: #3B0B0B;
+.TwirlyPig img {
+  height: 60px;
+  animation: spin 5s linear infinite;
 }
 
-.normalText {
-  font-family: Georgia, serif;
-  font-size: .75em;
-}
-
-.hoggyText {
-  font-size: 1.5em;
-}
-
-.achievementText {
-  color: purple;
-}
-
-ul {
-  list-style-type: none;
-  list-style: none;
-}
-
-.normalText ul {
-  font-family: Georgia, serif;
-  font-size: .75em;
-  text-align: left;
-}
-
-.subtleText {
-  color: #D1D1D1;
-  font-size: .75em;
-}
-
-
-.indexWrapper {
-  margin: auto;
-}
-
-
-.pigTile {
-  display: inline;
-  background-repeat: no-repeat;
-  background-position: center 90%;
-  float: left;
-  margin: 2%;
-  padding: 1%;
-  outline: #3B0B0B dotted thick;
-  transition: 0.75s;
-  opacity: 1;
-}
-
-.minBackgroundSneak {
-  position: absolute;
-  width: inherit;
-  height: inherit;
-  background-size: cover;
-  z-index: -3;
-}
-
-.maxBackgroundSneak {
-  position: absolute;
-  width: inherit;
-  height: inherit;
-  background-size: cover;
-  z-index: -3;
-  opacity: 0.75;
-}
-
-.pigTile h3 {
-  color: #FBB;
-}
-
-.minPigTile {
-  width: 250px;
-  height: 250px;
-  background-size: cover;
-}
-
-.maxPigTile {
-  background-size: cover;
-  width: 500px;
-  height: 500px;
-}
-
-.pigTile:hover {
-  transform: scale(1.05);
-}
-
-
-.App-logo {
-  animation: App-logo-spin infinite 5s linear;
-  height: 80px;
-  transition: all .2s ease-in-out;
-}
-
-.footer {
-  padding: 1%;
-  clear: both;
-}
-
-
-@keyframes App-logo-spin {
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(360deg);
+  }
+}
+
+.normalText {
+  font-size: 1rem;
+}
+
+button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+.pigTile {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 15px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.pigTile:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hog-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.minPigTile {
+  margin-top: 15px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+form {
+  background-color: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 30px auto;
+}
+
+form h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .navWrapper {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .pigTile {
+    margin: 10px auto;
+    width: 90%;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
   }
 }
